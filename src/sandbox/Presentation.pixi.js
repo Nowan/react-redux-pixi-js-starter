@@ -1,7 +1,6 @@
 import { Container, Text } from "pixi.js";
-import { fiber } from "./decorators/pixiFiber";
 
-export default @fiber class PixiPresentation extends Container {
+export default class Presentation extends Container {
     constructor(props) {
         super();
 
