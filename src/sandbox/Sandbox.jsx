@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "react-redux";
-import Presentation from "./Presentation.adapter";
+import Presentation from "./Presentation.component.class";
 import { useApp, useReduxCounter } from "../redux/hooks";
 
 export default function Sandbox() {
@@ -11,7 +11,7 @@ export default function Sandbox() {
 
     useEffect(() => {
         const presentation = ref.current;
-        console.log(presentation)
+        console.log(presentation);
     }, []);
 
     return (
