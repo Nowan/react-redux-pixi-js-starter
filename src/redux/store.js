@@ -1,8 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit';
-import stageReducer from './slices/stage';
+import { createStore, combineReducers } from '@reduxjs/toolkit';
+import stageReducer, { setCounterValue } from './slices/stage';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-export const store = configureStore({
-  reducer: {
-    stage: stageReducer
-  },
+const composeEnhancers = composeWithDevTools({
+  actionCreators: {
+    setCounterValue(value) { return setCounterValue(value); }
+  }
 });
+
+export const store = createStore(
+  combineReducers({
+    stage: stageReducer
+  }),
+  composeEnhancers()
+);

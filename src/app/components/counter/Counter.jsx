@@ -1,8 +1,16 @@
 import { Component } from "react";
 import { Text } from "react-pixi-fiber";
+import { connect } from "react-redux";
+import { selectCounterValue } from "../../../redux/slices/stage/selectors";
 
-export default class Counter extends Component {
+const connectWrapper = connect(state => ({
+    value: selectCounterValue(state)
+}));
+
+class Counter extends Component {
     render() {
-        return <Text text={this.props.counter} />
+        return <Text {...this.props} text={this.props.value} style={{ fill: 0xffffff }} anchor={0.5} />
     }
 }
+
+export default connectWrapper(Counter)
