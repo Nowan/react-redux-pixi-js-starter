@@ -1,10 +1,10 @@
 import { forwardRef } from "react";
-import { adapterClass } from "./decorators/customPixiComponent";
+import { adapterClass } from "../../decorators/pixiFiber"
 import Presentation from "./Presentation.pixi";
 import { connect } from "react-redux";
-import { selectCount } from "../features/counter/counterSlice";
+// import { selectCount } from "../../../features/counter/counterSlice";
 
-@connect((state) => ({ counter: selectCount(state) }))
+// @connect((state) => ({ counter: selectCount(state) }))
 class PresentationAdapter extends adapterClass(Presentation) {
 
 }
